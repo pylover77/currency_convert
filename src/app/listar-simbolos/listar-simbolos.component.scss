@@ -1,0 +1,42 @@
+/* listar-simbolos.component.scss */
+
+.page-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  mat-table {
+    width: 100%;
+    max-width: 800px; /* Define a largura máxima da tabela */
+    margin: 0 auto; /* Centraliza a tabela horizontalmente */
+  
+    mat-header-cell {
+      font-weight: bold;
+      font-size: 16px;
+    }
+  
+    mat-cell {
+      font-size: 14px;
+    }
+
+    mat-row:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+  
+
+    .mat-column-codigo {
+      text-transform: uppercase;
+    }
+
+    .mat-column-descricao {
+
+    }
+  }
+  
+  mat-paginator {
+    justify-content: center; 
+    margin-top: 20px;
+  }
+  
+

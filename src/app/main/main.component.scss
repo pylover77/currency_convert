@@ -1,0 +1,32 @@
+/* app.component.scss */
+
+body {
+    overflow-y: hidden; /* Remover a barra de rolagem vertical */
+  }
+  
+  .main-container {
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* Alinhe o conteúdo à esquerda */
+    height: 100vh; /* Definindo a altura para ocupar toda a altura da tela */
+  
+    img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 20px;
+    }
+  
+    .main-text {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+  
+    @media (max-width: 768px) {
+      /* Estilos responsivos, se necessário */
+      align-items: center; /* Centralize o conteúdo na vertical em telas menores */
+    }
+  }
+  

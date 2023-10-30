@@ -1,0 +1,10 @@
+<div>
+    <h2>Historico de Conversões</h2>
+    <ul>
+        <li *ngFor="let conversao of historico">
+            {{ conversao.valorOrigem }} Moedas {{ conversao.moedaOrigem }}  equivale a ->
+             ({{ conversao.valorDestino }} {{ conversao.moedaDestino }})
+            - - Data da conversao: {{ conversao.data | date:'medium' }}
+        </li>
+    </ul>
+</div>
