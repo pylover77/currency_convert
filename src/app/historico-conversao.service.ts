@@ -14,12 +14,24 @@ export class HistoricoConversaoService {
   }
 
   adicionarConversao(conversao: any) {
-    conversao.data = new Date(); 
+    conversao.data = new Date();
     this.historico.push(conversao);
-    localStorage.setItem('historico-conversoes', JSON.stringify(this.historico));
+    this.salvarHistorico();
   }
 
   obterHistorico(): any[] {
     return this.historico;
+  }
+
+  excluirConversao(conversao: any) {
+    const index = this.historico.indexOf(conversao);
+    if (index !== -1) {
+      this.historico.splice(index, 1);
+      this.salvarHistorico();
+    }
+  }
+
+  private salvarHistorico() {
+    localStorage.setItem('historico-conversoes', JSON.stringify(this.historico));
   }
 }

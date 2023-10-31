@@ -16,6 +16,7 @@ import { CommonModule } from '@angular/common';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { HistoricoConversaoComponent } from './historico-conversao/historico-conversao.component';
+import { MatSortModule } from '@angular/material/sort';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,6 +39,7 @@ import { HistoricoConversaoComponent } from './historico-conversao/historico-con
     CommonModule,
     MatSelectModule,
     MatInputModule,
+    MatSortModule,
 
   ],
   providers: [],

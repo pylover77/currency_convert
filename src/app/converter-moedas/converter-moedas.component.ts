@@ -36,32 +36,36 @@ export class ConverterMoedasComponent implements OnInit {
   }
 
   converterMoeda() {
-    if (this.moedaOrigem && this.moedaOrigem !== 'selecione' && this.moedaDestino && this.valor) {
-      this.apiService.getConversion(this.moedaOrigem, this.moedaDestino, this.valor).subscribe(
-        (response: any) => {
-          if (response.result === 'success' && response.conversion_rate) {
-            this.valorConvertido = response.conversion_result;
-            this.taxaDeConversao = response.conversion_rate;
-            this.conversaoRealizada = true;
+    if (this.moedaOrigem && this.moedaOrigem !== 'selecione' && this.moedaDestino) {
+      if (this.valor !== null && this.valor >= 1) {
+        this.apiService.getConversion(this.moedaOrigem, this.moedaDestino, this.valor).subscribe(
+          (response: any) => {
+            if (response.result === 'success' && response.conversion_rate) {
+              this.valorConvertido = response.conversion_result;
+              this.taxaDeConversao = response.conversion_rate;
+              this.conversaoRealizada = true;
 
-            const conversao = {
-              moedaOrigem: this.moedaOrigem,
-              valorOrigem: this.valor,
-              moedaDestino: this.moedaDestino,
-              valorDestino: this.valorConvertido,
-              taxaCambio: this.taxaDeConversao,
-              data: new Date() 
-            };
+              const conversao = {
+                moedaOrigem: this.moedaOrigem,
+                valorOrigem: this.valor,
+                moedaDestino: this.moedaDestino,
+                valorDestino: this.valorConvertido,
+                taxaCambio: this.taxaDeConversao,
+                data: new Date(),
+              };
 
-            this.historicoService.adicionarConversao(conversao);
+              this.historicoService.adicionarConversao(conversao);
+            }
+          },
+          (error: any) => {
+            console.error('Erro na conversão de moeda:', error);
           }
-        },
-        (error: any) => {
-          console.error('Erro na conversão de moeda:', error);
-        }
-      );
+        );
+      } else {
+        alert('Apenas valores maiores ou iguais a 1 são permitidos.');
+      }
     } else {
-      console.error('Por favor, preencha todos os campos antes de converter.');
+      alert('Por favor, preencha todos os campos corretamente antes de converter.');
     }
   }
 

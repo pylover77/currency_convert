@@ -1,0 +1,70 @@
+/* Alinhar o conteúdo ao centro da tela */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  /* Estilo da tabela */
+  table {
+    border-collapse: collapse;
+    width: 80%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border-radius: 5px;
+  }
+  
+  table, th, td {
+    border: 1px solid #ccc;
+  }
+  
+  th, td {
+    padding: 12px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  /* Estilo do card de resultado */
+  .result-card {
+    border: 1px solid green;
+    padding: 20px;
+    background-color: greenyellow;
+    border-radius: 5px;
+    text-align: center;
+    width: 80%;
+    margin: 20px auto;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .conversion-text {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  /* Botão "Nova Conversão" */
+  .convert-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .convert-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .conversion-result {
+    border: 1px solid #ccc; /* Adicione uma borda */
+    border-radius: 5px; /* Borda arredondada */
+    padding: 15px; /* Espaçamento interno */
+    text-align: center; /* Centralize o conteúdo */
+    width: 300px; /* Largura desejada */
+    margin: 0 auto; /* Centralize horizontalmente */
+  }
